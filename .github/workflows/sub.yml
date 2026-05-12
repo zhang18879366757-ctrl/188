@@ -1,0 +1,28 @@
+name: Generate Subscription
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate Base64 Subscription
+        run: |
+          base64 -w 0 nodes.txt > sub.txt
+
+      - name: Commit Files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "github-actions"
+
+          git add .
+
+          git diff --quiet && git diff --staged --quiet || git commit -m "update subscription"
+
+          git push
