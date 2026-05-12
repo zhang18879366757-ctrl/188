@@ -1,3 +1,2 @@
 trojan://18879366757@www.shaojun.sbs:443
-
 trojan://4c85c5cc-9396-41e3-bae9-a075d7a47ce2@www.shaojun.cyou:443?peer=www.shaojun.cyou&alpn=http/1.1#www.shaojun.cyou_Trojan
